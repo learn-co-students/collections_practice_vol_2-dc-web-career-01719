@@ -33,10 +33,14 @@ def remove_non_strings(array)
 end
 
 def count_elements(array)
-  #array.count
+  counter = {:name => '', :count => 0}
   array.each do |i|
-    array.count(i)
+    i.each do |symbol, name|
+      counter[:name] = name
+      counter[:count] += 1
+    end
   end
+  counter
 end
 
 def merge_data(array_one, array_two)
