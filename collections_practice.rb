@@ -36,3 +36,35 @@ def count_elements(array)
   end }
   output
 end
+
+
+def merge_data(keys, data)
+  keys.each {|x|
+
+  person = x[:first_name]
+  
+  traits = data[0][person]
+  traits.each {|trait, value|
+  x[trait]=value
+    }
+    }
+end
+
+def find_cool(search)
+  output = []
+  search.each {|person|
+if person[:temperature] == "cool"
+  output << person
+  end
+  }
+  output
+end
+
+def organize_schools(schools)
+  organized_schools = {}
+  schools.each {|school, where|
+  city = where[:location]
+(organized_schools[city] ||= [])<< school
+  }
+  organized_schools
+end
